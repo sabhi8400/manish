@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader (created by composer, not included with PHPMailer)
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -18,14 +18,14 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'vedantam.ayurveda.mailer@gmail.com';                     //SMTP username
-    $mail->Password   = 'qekuykbefdgwfdf';                               //SMTP password
+    $mail->Password   = 'jpyw npiw zcyt zdkn';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('from@example.com', 'Mailer');
+    $mail->setFrom('vedantam.ayurveda.mailer@gmail.com', 'Mailer');
     $mail->addAddress('aacharya.manish7@gmail.com', 'Manish');     //Add a recipient
-    //$mail->addAddress('ellen@example.com');               //Name is optional
+    //$mail->addAddress('sabhi8400@gmail.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('sabhi8400@gmail.com');
    // $mail->addBCC('bcc@example.com');
@@ -37,7 +37,10 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Contact Box query';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = '<table><tr><td>Name</td><td>'.$_POST['name'].'</td></tr>
+                              <tr><td>Email</td><td>'.$_POST['email'].'</td></tr>
+                              <tr><td>Message</td><td>'.$_POST['message'].'</td></tr>
+                      </table>';
     //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
