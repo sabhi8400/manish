@@ -552,7 +552,7 @@ section,
   justify-content: center;
 }
 
-.hero img {
+.hero #banner {
   position: absolute;
   inset: 0;
   display: block;
