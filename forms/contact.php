@@ -13,15 +13,26 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+   // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = 'vedantam.ayurveda.mailer@gmail.com';                     //SMTP username
     $mail->Password   = 'jpyw npiw zcyt zdkn';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
+
+    // $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
+    // $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    // $mail->Username   = '9c62938f9a0bf6';                     //SMTP username
+    // $mail->Password   = '529f5b882dda69';                               //SMTP password
+    // //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    // $mail->Port       = 587;         
+    
+    
+
+    
     //Recipients
     $mail->setFrom('vedantam.ayurveda.mailer@gmail.com', 'Mailer');
     $mail->addAddress('aacharya.manish7@gmail.com', 'Manish');     //Add a recipient
